@@ -33,9 +33,6 @@ public class Carta {
 
     @Override
     public String toString() {
-        return "Carta{" +
-                "pinta='" + pinta + '\'' +
-                ", numero=" + numero +
-                '}';
+        return "[" + this.numero + " de " + this.pinta + "]";
     }
 }

@@ -1,4 +1,4 @@
-package Interfaz;
+package Mesa;
 
 import Cartas.Carta;
 import Personas.Crupier;
@@ -6,9 +6,9 @@ import Personas.Jugador;
 
 import java.util.ArrayList;
 
-public interface Mesa {
+public class VistaMesa {
 
-    default void cartasJugadasRonda(ArrayList<Jugador>jugadores, Crupier crupier, int  numeroRonda) {
+    public static void cartasJugadasRonda(ArrayList<Jugador>jugadores, Crupier crupier, int  numeroRonda) {
         System.out.println("******************** CARTAS JUGADAS DURANTE LA RONDA "+numeroRonda+" ********************");
         //Mostramos las cartas jugadas del crupier, y sus respectivos puntos
         System.out.println("--- Cartas Crupier ---");
@@ -31,7 +31,7 @@ public interface Mesa {
         }
     }
 
-    default void determinarGanadores(ArrayList<Jugador> jugadores, Crupier crupier,int  numeroRonda) {
+    public static void determinarGanadores(ArrayList<Jugador> jugadores, Crupier crupier,int  numeroRonda) {
         System.out.println("\n******************** RESULTADOS DE LA RONDA "+numeroRonda+" ********************");
         //Verificamos los casos en que los jugadores pierden o ganan
         //En los casos en los que pierdan los jugadores, les restamos una vida
@@ -50,8 +50,9 @@ public interface Mesa {
                 System.out.println(jugador.getNombre() + ": Empate en " + jugador.calcularPuntos() + " puntos.");
             }
 
-            //Mostramos sus vidas restantes
+            //Mostramos sus vidas restantes y mostramos si el jugador perdio
             System.out.println("Vidas restantes: "+jugador.getVida());
+            System.out.println("¿Jugador eliminado? "+jugador.getEliminado());
             System.out.println("*--------------------*");
         }
         System.out.println("****************************************************************\n");

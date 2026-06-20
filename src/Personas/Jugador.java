@@ -26,7 +26,6 @@ public class Jugador extends Persona {
         this.vida -= 1;
         if (this.vida == 0) {
             this.eliminado = true;
-            System.out.println("El jugador "+this.nombre+" ha sido eliminado!");
         }
     }
 

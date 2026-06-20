@@ -20,8 +20,9 @@ public class Baraja {
     }
 
     //Metodos
-    public void consultarCartasDisponibles(){
-        System.out.println(cartas.size());
+    public int consultarCartasDisponibles(){
+        //Devuelve la cantidad de cartas disponibles
+        return cartas.size();
     }
 
     public void barajar(){
@@ -36,17 +37,32 @@ public class Baraja {
             return cartas.remove(0);
         }
         //Si no hay cartas disponibles mostramos un mensaje por pantalla y devolvemos null
-        System.out.printf("no hay cartas disponibles\n");
+        System.out.println("No hay cartas disponibles...\n");
         return null;
     }
 
     public ArrayList<Carta> darCartas(int cantidad){
         //Entregamos una cantidad determinada de cartas disponibles utilizando el metodo
         // "obtenerSiguienteCartaDisponible()"
-        ArrayList<Carta> cartasDar = new ArrayList();
+        ArrayList<Carta> cartasDar = new ArrayList<>();
         for (int i = 0; i < cantidad; i++){
-            cartasDar.add(obtenerSiguienteCartaDisponible());
+            Carta carta = obtenerSiguienteCartaDisponible();
+            if (carta != null){ //Verificamos si la carta no es nula antes de entregarla
+                cartasDar.add(carta);
+            }
         }
         return cartasDar;
+    }
+
+    public void reiniciarBarja(){
+        //Vaciamos las cartas restantes
+        this.cartas.clear();
+        //Volvemos a generar las cartas
+        String[] pintas = {"Espadas", "Bastos", "Oros", "Copas"};
+        for (String pinta : pintas) {
+            for (int i = 1; i <= 12; i++) {
+                cartas.add(new Carta(pinta, i));
+            }
+        }
     }
 }

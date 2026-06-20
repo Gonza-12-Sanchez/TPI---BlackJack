@@ -68,7 +68,7 @@ public abstract class Persona {
     public boolean comprobarSiPerdioPorPuntos(){
         //Comprobamos si la persona se paso de puntos, o no
         //Ademas, si se paso de puntos, cambiamos el estado del atributo perdio a true
-        if(calcularPuntos() > 21){
+        if(this.puntos > 21){
             this.perdio = true;
             return true;
         }

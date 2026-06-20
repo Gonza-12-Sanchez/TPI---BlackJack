@@ -20,11 +20,6 @@ public class Crupier extends Persona {
         return baraja;
     }
 
-    //Setter
-    public void setBaraja(Baraja baraja) {
-        this.baraja = baraja;
-    }
-
     //Metodos
     public void repartirManoInicial(ArrayList<Jugador> jugadores) {
         //Recorremos todos los jugadores para repartirles la mano inicial
