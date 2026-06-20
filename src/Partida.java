@@ -1,5 +1,5 @@
 import Cartas.Carta;
-import Mesa.VistaMesa;
+import Mesa.Mesa;
 import Personas.Crupier;
 import Personas.Jugador;
 import Validaciones.LecturaConsola;
@@ -47,10 +47,10 @@ public class Partida {
             System.out.println();
 
             //Mostramos las cartas jugadas durante la ronda
-            VistaMesa.cartasJugadasRonda(this.jugadores, this.crupier, this.numeroRonda);
+            Mesa.cartasJugadasRonda(this.jugadores, this.crupier, this.numeroRonda);
 
             //Mostramos los resultados de la ronda
-            VistaMesa.determinarGanadores(this.jugadores, this.crupier, this.numeroRonda);
+            Mesa.determinarGanadores(this.jugadores, this.crupier, this.numeroRonda);
 
             //Determinamos si termino la partido o no
             if (verificarFinPartida(this.jugadores)){

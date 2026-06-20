@@ -6,7 +6,7 @@ import Personas.Jugador;
 
 import java.util.ArrayList;
 
-public class VistaMesa {
+public class Mesa {
 
     public static void cartasJugadasRonda(ArrayList<Jugador>jugadores, Crupier crupier, int  numeroRonda) {
         System.out.println("******************** CARTAS JUGADAS DURANTE LA RONDA "+numeroRonda+" ********************");
